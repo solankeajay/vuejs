@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+            
+        <div id="my-app">
+            <h3>Counter: {{ counter }}</h3>
+            <button type="button" name="button" @click.once="incrementby1">Click + 1</button>
+        
+            <br /><br />
+        
+            <a href="https://www.google.com" @click.prevent>Google</a>
+        
+            <br /><br />
+        
+            <form class="" action="#" method="post" @submit.prevent>
+                <button type="submit" name="button">Submit</button>
+            </form>
+        
+            <br /><br />
+        
+            <div id="parent-div" @click="submitClick">
+                <button id="child-div" @click.stop="submitClick">Click Me</button>
+            </div>
+        
+            <br /><br />
+        
+            <div class="parent-class" @click.capture="parentClass">
+                <button type="button" name="button" @click="btnClick">Click Me Again</button>
+            </div>
+        
+        
+        
+        
+        
+        
+        </div>
+
+        <script>
+            var myapp = new Vue({
+                    el: "#my-app",
+                    data: {
+                        counter: 0
+                    },
+                    methods: {
+                        incrementby1: function () {
+                            this.counter++;
+                        },
+                        submitClick: function () {
+                            console.log("clicking");
+                        },
+                        parentClass: function () {
+                            console.log("Parent Class...");
+                        },
+                        btnClick: function () {
+                            console.log("Button Click...");
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>

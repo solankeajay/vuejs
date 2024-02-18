@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app-1">
+            <owt></owt>
+        </div>
+        
+        <div id="my-app-2">
+            <owt></owt>
+        </div>
+
+        <script>
+            
+                var data = {
+                    name: "Online web tutor",
+                    author: "Sanjay"
+                };
+
+                Vue.component("owt", {
+                    template: "<div><p>This is called online web tutor markup Channel name: {{ name }}, Author: {{ author }}</p><p>Method Running: {{ method1() }}</p><p>Computed: {{ computed1 }} <button @click='fireMe'>Click me</button></p></div>",
+                    data: function () {
+                        return {
+                            name: "Online web tutor",
+                            author: "Sanjay"
+                        }
+                    },
+                    methods: {
+                        method1: function () {
+                            return "This is vue component";
+                        },
+                        fireMe: function () {
+                            this.author = "Sanju";
+                        }
+                    },
+                    computed: {
+                        computed1: function () {
+                            return "Simple message";
+                        }
+                    }
+                });
+
+                var myapp1 = new Vue({
+                    el: "#my-app-1",
+                    data: {
+
+                    },
+                    methods: {
+
+                    }
+                });
+
+                var myapp1 = new Vue({
+                    el: "#my-app-2",
+                    data: {
+
+                    },
+                    methods: {
+
+                    }
+                });
+        </script>
+    </body>
+
+</html>

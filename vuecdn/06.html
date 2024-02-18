@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app">
+            <div class="move-area" @mousemove="movefunction" style="height:200px;width:200px;border:1px solid black;">
+                <span>{{ x }},{{ y }}</span>
+            </div>
+        
+            <button type="button" name="button" @mouseout="outfunction" @mouseover="overfunction">Mouseover</button>
+        
+            <!--button type="button" name="button">Mouseout</button-->
+        </div>
+
+        <script>
+            var myapp = new Vue({
+                    el: "#my-app",
+                    data: {
+                        x: 0,
+                        y: 0
+                    },
+                    methods: {
+                        movefunction: function (event) {
+                            this.x = event.offsetX;
+                            this.y = event.offsetY;
+                        },
+                        overfunction: function () {
+                            console.log("This is message due to mouseover");
+                        },
+                        outfunction: function () {
+                            console.log("This is message due to mouseout");
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>

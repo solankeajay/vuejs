@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app">
+            First Name: <input type="text" placeholder="Enter first name" v-model="fname"><br />
+            Last Name: <input type="text" placeholder="Enter last name" v-model="lname"><br />
+        
+            <br />
+            <h4>Full name: <input type="text" v-model="fullname" /></h4>
+            <p>Channel name: {{ channelName }}</p>
+        </div>
+
+        <script>
+            var myapp1 = new Vue({
+                    el: "#my-app",
+                    data: {
+                        fname: "",
+                        lname: "",
+                        channelName: "OWT"
+                    },
+                    methods: {
+
+                    },
+                    computed: {
+                        fullname: {
+                            get: function () {  // getter function of fullname
+                                return this.fname + " " + this.lname;
+                            },
+                            set: function () {  // setter function of fullname
+                                //console.log("Set function is running");
+                                this.channelName = "Updated OWT"
+                            }
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>

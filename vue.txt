@@ -1,0 +1,194 @@
+01.
+    -> feture of vue js 
+
+02.
+    ->create first program using vue js cdn link
+
+03.
+    -> Methods use in vue js 
+
+04.
+    ->Concept of Data binding
+        1. Html Attributes binding (v-bind: OR : )
+        2. Html Class binding (v-bind: OR : )
+        3. Html Input binding (v-bind: OR : )
+        4. Html Content binding (v-html:)
+
+05.
+    -> Event Handling 
+        1. click Event (v-on: OR @)
+        2. double click (v-on: OR @)
+
+06.
+    -> other events (v-on: OR @)
+        3. mouse move 
+        4. mouse over 
+        5. mouse out
+
+07.
+    -> keyboard event (v-on: OR @)
+        1. key press 
+        2. key up 
+        3. key down 
+
+08.
+    -> Event Modifiers (. after event)
+        1. once
+        2. prevent 
+        3. stop 
+        4. capture
+
+09.
+    -> key Modifiers (. after event)
+        1. enter 
+        2. alt 
+        3. ctrl 
+        4. keyCode 
+        5. delete
+        6. space
+
+10. Two way data binding (like live preview) |v-model| 
+
+11. Computed Properties. (same as method)
+    -> difrent betwen method and Computed.
+
+12. Daynamic CSS classes concept.
+
+13. Conditional directives 
+    -> v-if 
+    -> v-else 
+    -> v-else-if 
+    -> v-show
+    -> difrence between v-if  AND v-show
+
+14. For Loop
+    -> v-for 
+
+15. Concept Multiple Instances 
+    -> use multiple ids and cretae multiple Vue instance
+
+16. Components in vue js 
+    -> reusable html code with data, method and computed
+
+17. Setter And Getter functions of Computed Properties
+
+18. Concept of Reference ($refs)
+    -> get values or inner html using refs=""
+
+19. Custom Directives 
+    ->Vue.directive('directiveName', {
+        bind,
+        update,
+        unbind
+    })
+
+20. Example of Custom Directives (using bnd only)
+
+
+<!****************************** Vue CLI ****************************!>
+
+21. Install Vue Cli (only installing)
+    1. install node.js according to sestem
+        ->https://nodejs.org/en/download 
+
+        after installing check :
+            $ node -v => check node version 
+            $ npm -v => check npm version
+
+    2. install vue cli (https://www.npmjs.com/package/vue-cli)
+        ->$ npm install -g vue-cli 
+        -> check by $ vue-cli --version
+
+    3. install vue cli project : vue init <template-name> <project-name>
+
+**22. Vue CLI Folder & File structure
+
+23. Program in Vue CLI
+
+24. Create First Component in Vue CLI 
+        ->Locally Defined component
+        ->Globally defined component 
+
+25. Concept of Scoped CSS in Vue CLI
+
+26. Nested Components ( convert html page to vue js component)
+
+27. Nested Components ( convert html page to vue js component) #2 ---> vue26
+
+28. Props in vue js (pass data from perent component 1 to child component 2 using "props")
+
+29. Props validation in vue js  --> vue28
+
+30. Reference type values & Primitive type values  --> No Code
+        -> Reference type: object, Array ( reflect on every component )
+        -> Primitive type: String, Number, Boolean ( reflect on current component )
+
+31. Fire Event from Child Component to Parent Component (ex: update value from child component)
+
+32. Event Bus in vue js 
+        -> transfer data perent to child And Child to perent
+
+33. Life Cycle Hooks in Vue 
+        -> check this chart https://v2.vuejs.org/v2/guide/instance#Instance-Lifecycle-Hooks
+
+34. Concept Of Slots 
+
+35. Dynamic Components  ( <keep-alive> tag for keep form input values )
+
+36. Input Binding in vue ( use binding and event Modifiers)
+
+37. Checkbox Binding #2 --> vue36
+
+38. Radio Button & Select box Binding #3  --> vue36
+
+39. HTTP Request in vue js | Post Request
+        -> install vue resource for send http request in vue ( npm install vue-resource)
+
+40. HTTP Request in vue js | Get Request  -- vue39
+
+41. Custom Directives in Vue | pass value & arguments in drective  --> vue39
+
+42. Filters in vue   --> vue39
+    -> use for (change output data)
+    -> two way to define ( localy and Globally )
+
+43. Mixins in vue  --> vue39
+    -> mixin is reusable code 
+    -> two way to create first in main.js file.
+    -> second using saprat mixin file
+
+44. Routing in vue 
+    -> install routing package ( npm install vue-router -- save)
+
+45. Routing in vue ( setup route saprate file)  #2  ---> vue44
+
+46. Remove # from Route url   #3   --> vue44 
+
+47. Url Parameters in Routes (get blog post data from fake api AND create id url)   #4
+
+48. read single blog details #5   ---> vue44
+
+49. Building php APIs 
+    -> install axios package ( npm install --save axios vue-axios)
+    -> create api setup  in PHP
+
+50. Building php APIs #2
+    -> insert & update api PHP Code 
+
+51. Building php APIs  #3
+    -> read & delete data api PHP Code 
+
+52. connect insert api using $axios
+
+
+
+
+/************************************ Install Vue in Laravel using Laravel UI **************************************/
+
+1) installl Laravel 
+
+2) install Laravel Ui ( composer require laravel/ui )
+
+3) install Vue without outh  ( php artisan ui vue ) with auth ( php artisan ui vue --auth )
+
+4) install vue npm packeg (npm install && npm run dev )

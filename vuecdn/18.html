@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app">
+            Name: <input type="text" placeholder="Name" ref="txtname"><br />
+            <br />Email: <input type="email" placeholder="Email" ref="txtemail"><br />
+            <br />
+            <p ref="para">This is simple message</p>
+            <br /><button type="button" @click="btnSubmit">Submit</button>
+        </div>
+
+
+        <script>
+            var myapp1 = new Vue({
+                    el: "#my-app",
+                    data: {
+
+                    },
+                    methods: {
+                        btnSubmit: function () {
+                            //console.log("I am clicked");
+                            console.log(this.$refs);
+                            console.log("Name: " + this.$refs.txtname.value);
+                            console.log("Email: " + this.$refs.txtemail.value);
+                            console.log("Paragraph: " + this.$refs.para.innerHTML);
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>

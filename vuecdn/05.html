@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app">
+            <h3>Counter : {{ counter }}</h3>
+            <!-- click event -->
+            <button type="button" @click="increment(1)" name="button">Increment by 1</button>
+            <button type="button" v-on:click="decrement(1)" name="button">Decrement by 1</button>
+        
+            <!-- double click event -->
+            <button type="button" @dblclick="increment(5)">Increment by 5</button>
+            <button type="button" v-on:dblclick="decrement(5)">Decrement by 5</button>
+        
+        </div>
+
+        <script>
+            var myapp = new Vue({
+                    el: "#my-app",
+                    data: {
+                        counter: 0
+                    },
+                    methods: {
+                        increment: function (inc) {
+                            this.counter += inc;
+                        },
+                        decrement: function (desc) {
+                            this.counter -= desc;
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>

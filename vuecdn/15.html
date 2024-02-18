@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app-1">
+            <p>Title: {{ title }}</p>
+            <p>Author Name: {{ author }}</p>
+            <p>{{ secondApp() }}</p>
+            <p>Method from App 2: {{ thirdAppFn() }}</p>
+            <p>Computed from App2: {{ accessComputedApp2() }}</p>
+        </div>
+        
+        <div id="my-app-2">
+            <p>Author: {{ author }}</p>
+            <p>{{ secondApp() }}</p>
+        </div>
+
+        <script>
+            var myapp2 = new Vue({
+                    el: "#my-app-2",
+                    data: {
+                        author: "Sanjay"
+                    },
+                    methods: {
+                        secondApp: function () {
+                            return "This is second instance";
+                        }
+                    },
+                    computed: {
+                        fullname: function () {
+                            return this.author;
+                        }
+                    }
+                });
+
+                var myapp1 = new Vue({
+                    el: "#my-app-1",
+                    data: {
+                        title: "Online Web Tutor",
+                        author: myapp2.author
+                    },
+                    methods: {
+                        secondApp: function () {
+                            return "This is first instance";
+                        },
+                        thirdAppFn: function () {
+                            return myapp2.secondApp()
+                        },
+                        accessComputedApp2: function () {
+                            return myapp2.fullname;
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>

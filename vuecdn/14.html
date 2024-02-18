@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app">
+            <ul>
+                <li v-for="(student,index) in students">{{ index }}-{{ student }}</li>
+            </ul>
+            <ul>
+                <li v-for="teacher in teachers">
+                    {{ teacher.name }} teaches {{ teacher.subject }} from {{ teacher.location.street }},
+                    {{ teacher.location.city }}
+                </li>
+            </ul>
+            <ul>
+                <li v-for="teacher in teachers">
+                    {{ teacher.name }} teaches {{ teacher.subject }}
+                    <p v-for="(addr,index) in teacher.location">
+                        {{ index }} - {{ addr }}
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+
+        <script>
+            var myapp = new Vue({
+                    el: "#my-app",
+                    data: {
+                        students: ["Sanjay", "Mahesh", "Rahul", "Rakesh", "Adarsh"],
+                        teachers: [
+                            { name: "Teacher 1", subject: "Subject 1", location: { street: "Street 1", city: "City 1" } },
+                            { name: "Teacher 2", subject: "Subject 2", location: { street: "Street 2", city: "City 2" } },
+                            { name: "Teacher 3", subject: "Subject 3", location: { street: "Street 3", city: "City 3" } },
+                            { name: "Teacher 4", subject: "Subject 4", location: { street: "Street 4", city: "City 4" } }
+                        ]
+                    },
+                    methods: {
+
+                    }
+                });
+        </script>
+    </body>
+
+</html>

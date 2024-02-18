@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app">
+            <input type="text" placeholder="Key press..." @keypress="keypressfunction">
+        
+            <br /><br />
+        
+            <input type="text" placeholder="Key Up..." @keyup="keyupfunction">
+        
+            <br /><br />
+        
+            <input type="text" placeholder="Key down..." @keydown="keydownfunction">
+        
+        </div>
+
+
+        <script>
+            var myapp = new Vue({
+                    el: "#my-app",
+                    data: {
+
+                    },
+                    methods: {
+                        keypressfunction: function (event) {
+                            console.log(event.key);
+                        },
+                        keyupfunction: function () {
+                            console.log("Key up...");
+                        },
+                        keydownfunction: function (event) {
+                            console.log(event);
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>

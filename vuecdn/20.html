@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app">
+            <button type="button" name="button" v-owt:blue="channelName">Area #1</button>
+            <button type="button" name="button" v-owt:red="channelName">Area #2</button>
+        </div>
+
+        <script>
+            Vue.directive("owt", function (el, binding) {
+                    //console.log(el);
+                    //console.log(binding);
+                    var dir_arg = binding.arg;
+                    if (dir_arg == "red") {
+                        el.style.backgroundColor = "red";
+                        el.style.color = "white";
+                        el.style.fontSize = "20px";
+                    }
+                    if (dir_arg == "blue") {
+
+                        var mod = binding.modifiers.change;
+                        if (mod == true) {
+                            el.style.backgroundColor = "orange";
+                            el.style.color = "white";
+                            el.style.fontSize = "20px";
+                        } else {
+                            el.style.backgroundColor = "blue";
+                            el.style.color = "white";
+                            el.style.fontSize = "20px";
+                        }
+
+                    }
+                });
+
+                var myapp1 = new Vue({
+                    el: "#my-app",
+                    data: {
+                        channelName: "Online Web Tutor"
+                    },
+                    methods: {
+
+                    }
+                });
+        </script>
+    </body>
+
+</html>

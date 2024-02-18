@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <div id="my-app">
+            <button type="button" title="No update" v-on:click="updateValue" name="button"
+                v-custom-owt:channel.a.b="message">Click me</button>
+        
+            <button type="button" name="button" v-custom-owt="{name:'sanjay', designation:'php'}"></button>
+        </div>
+
+        <script>
+            Vue.directive('custom-owt', {
+                    bind: function (el, binding, vnode) {
+                        //console.log(el);  // dom element
+                        el.style.backgroundColor = "blue"; // style="background-color:"
+                        el.style.fontSize = "20px";
+                        el.style.color = "green";
+                        el.title = "Title is now updated";
+                        //console.log(binding);  // properties of directive
+                        //console.log("Value = "+binding.value);
+                        console.log("Name: " + binding.value.name);
+                    },
+                    update: function (object1, object2) {
+                        //console.log("Running");
+                        var data = JSON.parse(JSON.stringify(object2));
+                        //console.log(data);
+                    },
+                    unbind: function () {
+
+                    }
+                });
+                //v-on:click.prevent
+                var myapp1 = new Vue({
+                    el: "#my-app",
+                    data: {
+                        message: "This is custom call"
+                    },
+                    methods: {
+                        updateValue: function () {
+                            console.log("update...");
+                            this.message = "Value has been updated now."
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video 06</title>
+
+        <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+        <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <!---
+        @keyup.alt.enter
+        
+              @keyup.enter
+        
+              @keyup.ctrl.enter
+        
+              @keyup.space
+        
+              @keyup.delete
+        
+              @keyup.keyCode
+        -->
+        <div id="my-app">
+            <input type="text" @keyup.65="keypressfunction">
+        </div>
+
+        <script>
+            var myapp = new Vue({
+                    el: "#my-app",
+                    data: {
+
+                    },
+                    methods: {
+                        keypressfunction: function () {
+                            console.log("I am running...");
+                        }
+                    }
+                });
+        </script>
+    </body>
+
+</html>
